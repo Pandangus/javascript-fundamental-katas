@@ -51,13 +51,6 @@ describe("dnaPairs()", () => {
   test("test to make sure original data is not mutated", () => {
     //arrange
     const testInput = "ATGCH";
-    const expectedOutput = [
-      ["A", "T"],
-      ["T", "A"],
-      ["G", "C"],
-      ["C", "G"],
-      ["H has no matches"],
-    ];
     //act
     const result = dnaPairs(testInput);
     //assert
