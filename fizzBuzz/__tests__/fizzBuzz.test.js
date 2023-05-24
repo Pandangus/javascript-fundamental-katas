@@ -1,0 +1,1 @@
+const dnaPairs = require("../dna-pairs.js");
