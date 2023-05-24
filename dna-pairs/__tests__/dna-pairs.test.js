@@ -1,7 +1,11 @@
 const dnaPairs = require('../dna-pairs.js');
 
 describe('dnaPairs()', () => {
-  test('ADD YOUR TEST DESCRIPTION HERE', () => {
-    // add your test assertion(s) here
+  test('returns an single array nested within an array when passed an empty string', () => {
+    //arrange
+    const testInput = 
+    //act
+
+    //assert
   });
 });
