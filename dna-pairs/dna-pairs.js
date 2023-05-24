@@ -3,9 +3,7 @@ function dnaPairs(dna) {
   if(dna === ""){
     return [[]];
   }
-
   const newArr = [];
-
   for(let i = 0; i < dna.length; i++){
     switch(dna[i]){
       case "A":
@@ -23,7 +21,8 @@ function dnaPairs(dna) {
       case "C":
          newArr.push(["C", "G"]);
          break;
-
+      default:
+        newArr.push([`${dna[i]} has no matches`]);
     }
   }
   return newArr;

@@ -33,4 +33,19 @@ describe("dnaPairs()", () => {
     //assert
     expect(result).toEqual(expectedOutput);
   });
+  test("returns correct match for multiple DNA characters and flags characters with no matches ", () => {
+    //arrange
+    const testInput = "ATGCH";
+    const expectedOutput = [
+      ["A", "T"],
+      ["T", "A"],
+      ["G", "C"],
+      ["C", "G"],
+      ["H has no matches"]
+    ];
+    //act
+    const result = dnaPairs(testInput);
+    //assert
+    expect(result).toEqual(expectedOutput);
+  });
 });
