@@ -9,4 +9,4 @@ function updateRemoteStudents(arrOfObj) {
       return object;
     });
 }
-module.exports = updateRemoteStudents;
+module.exports = updateRemoteStudents
