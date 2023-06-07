@@ -74,4 +74,9 @@ describe("tillAddition", () => {
       })
     ).toBe("£1376.72");
   });
+  test(`should not mutate input variable`, () => {
+    const inputVariable = 555;
+    const output = tillAddition(inputVariable);
+    expect(output).not.toBe(inputVariable);
+  });
 });
