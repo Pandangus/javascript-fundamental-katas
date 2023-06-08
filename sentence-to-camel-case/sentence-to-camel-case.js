@@ -3,10 +3,10 @@ function sentenceToCamelCase(sentence, boolean) {
     const upperCaseWordsArr = [];
     sentence.split(" ").forEach((word, index) => {
       if (!boolean && index === 0)
-        return upperCaseWordsArr.push(
-          word.slice(0, 1).toLowerCase() + word.slice(1)
-        );
-      upperCaseWordsArr.push(word.slice(0, 1).toUpperCase() + word.slice(1));
+        return upperCaseWordsArr.push(word.toLowerCase());
+      upperCaseWordsArr.push(
+        `${word.slice(0, 1).toUpperCase()}${word.slice(1).toLowerCase()}`
+      );
     });
     return upperCaseWordsArr.join("");
   }

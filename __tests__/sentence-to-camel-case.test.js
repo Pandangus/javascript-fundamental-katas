@@ -13,6 +13,12 @@ describe("sentenceToCamelCase", () => {
   test(`should return "thisSentence" when sentenceToCamelCase("This sentence", false) is called`, () => {
     expect(sentenceToCamelCase("This sentence", false)).toBe("thisSentence");
   });
+  test(`should return "ThisSentence" when sentenceToCamelCase("ThIs sEnTeNcE", true) is called`, () => {
+    expect(sentenceToCamelCase("ThIs sEnTeNcE", true)).toBe("ThisSentence");
+  });
+  test(`should return "thisSentence" when sentenceToCamelCase("ThIs sEnTeNcE", false) is called`, () => {
+    expect(sentenceToCamelCase("ThIs sEnTeNcE", false)).toBe("thisSentence");
+  });
   test(`should return "ThisBiggerStrangeSentence" when sentenceToCamelCase("This Bigger strange Sentence", true) is called`, () => {
     expect(sentenceToCamelCase("This Bigger strange Sentence", true)).toBe(
       "ThisBiggerStrangeSentence"
@@ -23,6 +29,18 @@ describe("sentenceToCamelCase", () => {
       "thisBiggerStrangeSentence"
     );
   });
+
+  test(`should return "ThisBiggerStrangeSentence" when sentenceToCamelCase("tHIS bIGGER sTRANGE sENTENCE", true) is called`, () => {
+    expect(sentenceToCamelCase("tHIS bIGGER sTRANGE sENTENCE", true)).toBe(
+      "ThisBiggerStrangeSentence"
+    );
+  });
+  test(`should return "thisBiggerStrangeSentence" when sentenceToCamelCase("THIS bIGGER sTRANGE sENTENCE", false) is called`, () => {
+    expect(sentenceToCamelCase("THIS bIGGER sTRANGE sENTENCE", false)).toBe(
+      "thisBiggerStrangeSentence"
+    );
+  });
+
   test(`should return a very long string entirely in UpperCamelCase when sentenceToCamelCase() is called with a very long string and a true boolean`, () => {
     expect(
       sentenceToCamelCase(
