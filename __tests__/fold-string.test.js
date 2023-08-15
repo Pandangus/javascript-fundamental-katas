@@ -7,6 +7,9 @@ describe("foldString", () => {
     test("should return a two character string unchanged", () => {
         expect(foldString("hu")).toBe("hu");
     })
+    test("should return a three character string unchanged", () => {
+        expect(foldString("pod")).toBe("pod");
+    })
     test("should fold a one word string with an even number of characters", () => {
         expect(foldString("apples")).toBe("ppasel");
     })
