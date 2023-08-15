@@ -29,7 +29,6 @@ describe("sentenceToCamelCase", () => {
       "thisBiggerStrangeSentence"
     );
   });
-
   test(`should return "ThisBiggerStrangeSentence" when sentenceToCamelCase("tHIS bIGGER sTRANGE sENTENCE", true) is called`, () => {
     expect(sentenceToCamelCase("tHIS bIGGER sTRANGE sENTENCE", true)).toBe(
       "ThisBiggerStrangeSentence"
@@ -40,7 +39,6 @@ describe("sentenceToCamelCase", () => {
       "thisBiggerStrangeSentence"
     );
   });
-
   test(`should return a very long string entirely in UpperCamelCase when sentenceToCamelCase() is called with a very long string and a true boolean`, () => {
     expect(
       sentenceToCamelCase(
