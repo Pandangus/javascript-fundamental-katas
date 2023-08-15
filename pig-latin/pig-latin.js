@@ -3,8 +3,17 @@ function pigLatin(str) {
   latinArr = [];
   splitStr = str.split(" ");
   for (index in splitStr) {
-    if (splitStr[index][0].toLowerCase() == "a" || "e" || "i" || "o" || "u") {
+    firstCharacter = splitStr[index][0].toLowerCase();
+    if (
+      firstCharacter == "a" ||
+      firstCharacter == "e" ||
+      firstCharacter == "i" ||
+      firstCharacter == "o" ||
+      firstCharacter == "u"
+    ) {
       latinArr.push(`${splitStr[index]}way`);
+    } else {
+      latinArr.push(`${splitStr[index]}ay`);
     }
     return latinArr.join(" ");
   }

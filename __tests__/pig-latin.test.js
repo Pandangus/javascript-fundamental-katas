@@ -7,4 +7,7 @@ describe("pigLatin", () => {
     test("should add 'way' as suffix to a word beginning with a vowel", () => {
         expect(pigLatin("apple")).toBe("appleway");
     })
+    test("should add 'ay' as suffix to a single consonant", () => {
+        expect(pigLatin("j")).toBe("jay");
+    })
 });
