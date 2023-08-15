@@ -3,21 +3,46 @@ function pigLatin(str) {
   latinArr = [];
   splitStr = str.split(" ");
   for (index in splitStr) {
-    firstCharacter = splitStr[index][0].toLowerCase();
-    if (
-      firstCharacter == "a" ||
-      firstCharacter == "e" ||
-      firstCharacter == "i" ||
-      firstCharacter == "o" ||
-      firstCharacter == "u"
-    ) {
+    firstCharacter = splitStr[index][0];
+    if (isVowel(firstCharacter)) {
       latinArr.push(`${splitStr[index]}way`);
     } else {
-      latinArr.push(`${splitStr[index]}ay`);
+      word = splitStr[index];
+      consonants = "";
+      count = 0;
+      for (index in word) {
+        ////////////////// you're trying to make it work when there are no vowels present:
+        // at the moment you're kinda triggering it when it meets a vowel, but you're
+        // testing it with strings with no vowels in them, so it can never detect one
+        char = word[index];
+        if (isVowel(char)) {
+          console.log("hello");
+        } else {
+          count += 1;
+          if(count == word.length){
+            latinArr.push(`${word}ay`)
+          }
+        }
+      }
     }
-    return latinArr.join(" ");
   }
+  return latinArr.join(" ");
 }
+
+function isVowel(inputStr) {
+  loweredInput = inputStr.toLowerCase();
+  if (
+    loweredInput == "a" ||
+    loweredInput == "e" ||
+    loweredInput == "i" ||
+    loweredInput == "o" ||
+    loweredInput == "u"
+  )
+    return true;
+  return false;
+}
+
+console.log(!isVowel("x"));
 
 module.exports = pigLatin;
 
