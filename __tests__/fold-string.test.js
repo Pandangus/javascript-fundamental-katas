@@ -22,4 +22,7 @@ describe("foldString", () => {
     test("should fold odd charactered words within a string containing a single space", () => {
         expect(foldString("gambled racecar")).toBe("magbdel carerac");
     })
+    test("should fold odd and even charactered words within a string containing a single space", () => {
+        expect(foldString("spaceman astronaught")).toBe("capsname ortsanthgua");
+    })
 });
