@@ -25,4 +25,12 @@ describe("foldString", () => {
     test("should fold odd and even charactered words within a string containing a single space", () => {
         expect(foldString("spaceman astronaught")).toBe("capsname ortsanthgua");
     })
+    test("should fold odd and even charactered words within a string containing a many words and multiple spaces", () => {
+        expect(foldString("up the airy mountains down the rushy glen")).toBe("up the iayr nuomtsnia odnw the ursyh lgne");
+    })
+    test("should not mutate original input", () => {
+        input = "pineapple"
+        output = foldString(input)
+        expect(input).not.toBe(output);
+    })
 });
