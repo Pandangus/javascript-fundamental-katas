@@ -4,6 +4,9 @@ describe("foldString", () => {
     test("should return a single character string unchanged", () => {
         expect(foldString("z")).toBe("z");
     })
+    test("should return a two character string unchanged", () => {
+        expect(foldString("hu")).toBe("hu");
+    })
     test("should fold a one word string with an even number of characters", () => {
         expect(foldString("apples")).toBe("ppasel");
     })
