@@ -16,5 +16,7 @@ describe("foldString", () => {
     test("should fold a one word string with an odd number of characters", () => {
         expect(foldString("apple")).toBe("papel");
     })
-    
+    test("should fold even charactered words within a string containing a single space", () => {
+        expect(foldString("banana orange")).toBe("nabana aroegn");
+    })
 });
