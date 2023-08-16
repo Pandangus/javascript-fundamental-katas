@@ -19,4 +19,7 @@ describe("pigLatin", () => {
     test("should push a any number of consonants to the end of the word and then add 'ay' as a suffix", () => {
         expect(pigLatin("school")).toBe("oolschay")
     })
+    test("should work correctly when passed strings containing multiple words separated by spaces", () => {
+        expect(pigLatin("keep pushing on")).toBe("eepkay ushingpay onway")
+    })
 });
