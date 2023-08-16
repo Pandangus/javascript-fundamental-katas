@@ -13,4 +13,7 @@ describe("pigLatin", () => {
     test("should add 'ay' as suffix to a series of consonants", () => {
         expect(pigLatin("pygmy")).toBe("pygmyay");
     })
+    test("should push a a single consonant to the end of the word and then add 'ay' as a suffix", () => {
+        expect(pigLatin("wallet")).toBe("alletway")
+    })
 });
