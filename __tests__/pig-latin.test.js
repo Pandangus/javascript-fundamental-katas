@@ -22,4 +22,9 @@ describe("pigLatin", () => {
     test("should work correctly when passed strings containing multiple words separated by spaces", () => {
         expect(pigLatin("keep pushing on")).toBe("eepkay ushingpay onway")
     })
+    test("should not mutate original input", () => {
+        input = 'banana'
+        output = pigLatin(input)
+        expect(output).not.toBe(input)
+    })
 });
