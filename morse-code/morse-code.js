@@ -94,4 +94,4 @@ function textToMorse(text) {
     .join(" ");
 }
 
-console.log(morseCode("low 5"))
+console.log(morseCode("You're good!"))

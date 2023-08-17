@@ -17,6 +17,9 @@ describe("morseCode", () => {
   test("should decode numbers as well as characters", () => {
     expect(morseCode(".-.. --- .--   .....")).toBe("LOW 5");
   });
+  test("should decode numbers punctuation", () => {
+    expect(morseCode("-.-- --- ..- .---. .-. .   --. --- --- -.. -.-.--")).toBe("YOU'RE GOOD!");
+  });
   test("should encode single character into morse code", () => {
     expect(morseCode("X")).toBe("-..-");
   });
