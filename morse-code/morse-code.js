@@ -77,7 +77,6 @@ function morseCode(str) {
     }
   }
 }
-module.exports = morseCode;
 
 function morseToText(morse) {
   return morse
@@ -94,4 +93,6 @@ function textToMorse(text) {
     .join(" ");
 }
 
-console.log(morseCode("You're good!"))
+module.exports = morseCode;
+
+console.log(morseCode('my top 20'))

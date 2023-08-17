@@ -8,17 +8,13 @@ describe("morseCode", () => {
     expect(morseCode(".... ..")).toBe("HI");
   });
   test("should decode multiple words from morse code", () => {
-    expect(
-      morseCode(
-        "-. --- -... --- -.. -.--   . ...- . .-.   --. --- . ...   .. -.   .- -. -..   -. --- -... --- -.. -.--   . ...- . .-.   -.-. --- -- . ...   --- ..- -"
-      )
-    ).toBe("NOBODY EVER GOES IN AND NOBODY EVER COMES OUT");
+    expect(morseCode("-- -.--   - --- .--.   ..--- -----")).toBe("MY TOP 20");
   });
-  test("should decode numbers as well as characters", () => {
-    expect(morseCode(".-.. --- .--   .....")).toBe("LOW 5");
   });
-  test("should decode numbers punctuation", () => {
-    expect(morseCode("-.-- --- ..- .---. .-. .   --. --- --- -.. -.-.--")).toBe("YOU'RE GOOD!");
+  test("should decode punctuation", () => {
+    expect(morseCode("-.-- --- ..- .---. .-. .   --. --- --- -.. -.-.--")).toBe(
+      "YOU'RE GOOD!"
+    );
   });
   test("should encode single character into morse code", () => {
     expect(morseCode("X")).toBe("-..-");
