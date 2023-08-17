@@ -39,12 +39,20 @@ function morseCode(str) {
     9: "----.",
   };
   if (/\s\s\s/.test(str)) {
-    return str.split("   ").map(word => word.split(" ").map((code) => Object.keys(lookUp).find((key) => lookUp[key] === code)).join("")).join(" ")
-  } else {
     return str
-      .split(" ")
-      .map((code) => Object.keys(lookUp).find((key) => lookUp[key] === code))
-      .join("");
+      .split("   ")
+      .map((word) => morseToText(word))
+      .join(" ");
+  } else {
+    return morseToText(str);
   }
 }
 module.exports = morseCode;
+
+
+function morseToText(morse) {
+  return morse
+    .split(" ")
+    .map((code) => Object.keys(lookUp).find((key) => lookUp[key] === code))
+    .join("");
+}
