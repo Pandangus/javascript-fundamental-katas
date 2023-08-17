@@ -30,4 +30,18 @@ describe("morseCode", () => {
       ".... --- .-- .---. ...   - .... .- - -.-.-- ..--.."
     );
   });
+  test("should encode test regardless of character case", () => {
+    expect(
+      morseCode(
+        "19000 BARS an HoUr they'RE Shelling! 760,000 THEY'VE done so FAR!!"
+      )
+    ).toBe(
+      ".---- ----. ----- ----- -----   -... .- .-. ...   .- -.   .... --- ..- .-.   - .... . -.-- .---. .-. .   ... .... . .-.. .-.. .. -. --. -.-.--   --... -.... ----- --..-- ----- ----- -----   - .... . -.-- .---. ...- .   -.. --- -. .   ... ---   ..-. .- .-. -.-.-- -.-.--"
+    );
+  });
+  test("should not mutate input", () => {
+    input = "9,000,000 Bicycles";
+    output = morseCode(input);
+    expect(output).not.toBe(input);
+  });
 });
