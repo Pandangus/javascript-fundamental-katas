@@ -48,7 +48,10 @@ function morseCode(str) {
       return morseToText(str);
     }
   } else {
-    return lookUp[str[0]];
+    return str
+      .split("")
+      .map((char) => lookUp[char])
+      .join(" ");
   }
 }
 module.exports = morseCode;
