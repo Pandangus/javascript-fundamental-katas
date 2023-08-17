@@ -10,4 +10,7 @@ describe("morseCode", () => {
     test("should decode multiple words from morse code", () => {
         expect(morseCode("-. --- -... --- -.. -.--   . ...- . .-.   --. --- . ...   .. -.   .- -. -..   -. --- -... --- -.. -.--   . ...- . .-.   -.-. --- -- . ...   --- ..- -")).toBe("NOBODY EVER GOES IN AND NOBODY EVER COMES OUT");
     })
+    test("should encode single character into morse code", () => {
+        expect(morseCode('X')).toBe('-..-');
+    })
 })

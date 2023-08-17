@@ -38,17 +38,20 @@ function morseCode(str) {
     8: "---..",
     9: "----.",
   };
-  if (/\s\s\s/.test(str)) {
-    return str
-      .split("   ")
-      .map((word) => morseToText(word))
-      .join(" ");
+  if (str[0] == "." || str[0] == "-") {
+    if (/\s\s\s/.test(str)) {
+      return str
+        .split("   ")
+        .map((word) => morseToText(word))
+        .join(" ");
+    } else {
+      return morseToText(str);
+    }
   } else {
-    return morseToText(str);
+    return lookUp[str[0]];
   }
 }
 module.exports = morseCode;
-
 
 function morseToText(morse) {
   return morse
