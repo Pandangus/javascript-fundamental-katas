@@ -93,3 +93,5 @@ function textToMorse(text) {
     .map((char) => lookUp[char])
     .join(" ");
 }
+
+console.log(morseCode("low 5"))

@@ -14,6 +14,9 @@ describe("morseCode", () => {
       )
     ).toBe("NOBODY EVER GOES IN AND NOBODY EVER COMES OUT");
   });
+  test("should decode numbers as well as characters", () => {
+    expect(morseCode(".-.. --- .--   .....")).toBe("LOW 5");
+  });
   test("should encode single character into morse code", () => {
     expect(morseCode("X")).toBe("-..-");
   });
