@@ -36,7 +36,7 @@ function morseCode(str) {
     6: "-....",
     7: "--...",
     8: "---..",
-    9: "----."
+    9: "----.",
   };
   if (str[0] == "." || str[0] == "-") {
     if (/\s\s\s/.test(str)) {
@@ -48,10 +48,14 @@ function morseCode(str) {
       return morseToText(str);
     }
   } else {
-    return str
-      .split("")
-      .map((char) => lookUp[char])
-      .join(" ");
+    if (/\s/.test(str)) {
+      return str
+        .split(" ")
+        .map((word) => textToMorse(word))
+        .join("   ");
+    } else {
+      return textToMorse(str);
+    }
   }
 }
 module.exports = morseCode;
@@ -61,4 +65,11 @@ function morseToText(morse) {
     .split(" ")
     .map((code) => Object.keys(lookUp).find((key) => lookUp[key] === code))
     .join("");
+}
+
+function textToMorse(text) {
+  return text
+    .split("")
+    .map((char) => lookUp[char])
+    .join(" ");
 }
