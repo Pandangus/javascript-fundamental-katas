@@ -14,6 +14,6 @@ describe("morseCode", () => {
         expect(morseCode('X')).toBe('-..-');
     })
     test("should encode multiple characters into morse code", () => {
-        expect(morseCode('MY')).toBe('-- -.--');
+        expect(morseCode('BYE')).toBe('-... -.-- .');
     })
 })
