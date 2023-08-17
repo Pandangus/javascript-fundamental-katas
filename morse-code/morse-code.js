@@ -94,5 +94,3 @@ function textToMorse(text) {
 }
 
 module.exports = morseCode;
-
-console.log(morseCode('my top 20'))
