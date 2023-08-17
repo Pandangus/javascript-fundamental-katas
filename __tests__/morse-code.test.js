@@ -25,4 +25,9 @@ describe("morseCode", () => {
       "... .... .   ... . .-.. .-.. ...   ... . .-   ... .... . .-.. .-.. ..."
     );
   });
+  test("should encode punctuation into morse code", () => {
+    expect(morseCode("HOW'S THAT!?")).toBe(
+      ".... --- .-- .---. ...   - .... .- - -.-.-- ..--.."
+    );
+  });
 });
