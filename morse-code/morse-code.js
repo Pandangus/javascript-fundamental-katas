@@ -38,6 +38,6 @@ function morseCode(str) {
     8: "---..",
     9: "----.",
   };
-  return Object.keys(lookUp).find(key => lookUp[key] === str)
+  return str.split(' ').map(code => Object.keys(lookUp).find(key => lookUp[key] === code)).join('')
 };
 module.exports = morseCode;
