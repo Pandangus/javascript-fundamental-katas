@@ -1,7 +1,7 @@
 // Please do not change the name of this function
 function changeCalculator(changeNum) {
-  calculatedChangeObj = {};
-  denominationArr = [200, 100, 50, 20, 10, 5, 2, 1];
+  const calculatedChangeObj = {};
+  const denominationArr = [200, 100, 50, 20, 10, 5, 2, 1];
   let ourChangeNum = changeNum;
   denominationArr.forEach((denomination) => {
     const changeRemainder = ourChangeNum % denomination;
