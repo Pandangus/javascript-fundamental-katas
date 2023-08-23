@@ -14,12 +14,17 @@ describe("rotateArray", () => {
     expect(rotateArray([1, 2, 3, 4], 11)).toEqual([2, 3, 4, 1]);
   });
   test(`should rotate array left if passed negative integer lesser than negative array length`, () => {
-    expect(rotateArray(["A", 1, "🌼", "orange"], -6)).toEqual(["🌼", "orange", "A", 1]);
+    expect(rotateArray(["A", 1, "🌼", "orange"], -6)).toEqual([
+      "🌼",
+      "orange",
+      "A",
+      1,
+    ]);
   });
   test(`should not mutate input`, () => {
-    inputArr = [0, 9, 10];
-    inputNum = 7
-    output = rotateArray(inputArr, inputNum);
-    expect(inputArr).toEqual([0, 9, 10]);
+    originalArr = [0, 9, 10];
+    rotationAmount = 7;
+    rotatedArray = rotateArray(originalArr, rotationAmount);
+    expect(originalArr).toEqual([0, 9, 10]);
   });
 });
