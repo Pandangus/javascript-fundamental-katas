@@ -27,7 +27,7 @@ describe("rotateArray", () => {
     rotatedArray = rotateArray(originalArr, rotationAmount);
     expect(originalArr).toEqual([0, 9, 10]);
   });
-  test(`should handle large rotation amount`, () => {
+  test(`should handle large positive rotation amount`, () => {
     expect(rotateArray([2, 4, 6, 8], 22)).toEqual([6, 8, 2, 4]);
   });
 });
