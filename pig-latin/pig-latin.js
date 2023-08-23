@@ -29,7 +29,7 @@ function pigLatin(str) {
 }
 
 function isVowel(inputStr) {
-  loweredInput = inputStr.toLowerCase();
+  const loweredInput = inputStr.toLowerCase();
   if (
     loweredInput == "a" ||
     loweredInput == "e" ||
