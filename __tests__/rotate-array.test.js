@@ -30,4 +30,7 @@ describe("rotateArray", () => {
   test(`should handle large positive rotation amount`, () => {
     expect(rotateArray([2, 4, 6, 8], 22)).toEqual([6, 8, 2, 4]);
   });
+  test(`should handle large negative rotation amount`, () => {
+    expect(rotateArray(['banana', 'peach', 'apricot'], -37035)).toEqual(['banana', 'peach', 'apricot']);
+  });
 });
