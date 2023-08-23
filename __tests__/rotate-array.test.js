@@ -17,8 +17,9 @@ describe("rotateArray", () => {
     expect(rotateArray(["A", 1, "🌼", "orange"], -6)).toEqual(["🌼", "orange", "A", 1]);
   });
   test(`should not mutate input`, () => {
-    input = [0, 9, 10];
-    output = rotateArray(input);
-    expect(output).not.toBe(input);
+    inputArr = [0, 9, 10];
+    inputNum = 7
+    output = rotateArray(inputArr, inputNum);
+    expect(inputArr).toEqual([0, 9, 10]);
   });
 });
