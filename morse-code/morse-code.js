@@ -1,6 +1,6 @@
 // Please do not change the name of this function
 function morseCode(str) {
-  lookUp = {
+  const lookUp = {
     A: ".-",
     B: "-...",
     C: "-.-.",
@@ -61,35 +61,35 @@ function morseCode(str) {
     if (/\s\s\s/.test(str)) {
       return str
         .split("   ")
-        .map((word) => morseToText(word))
+        .map((word) => morseToText(word, lookUp))
         .join(" ");
     } else {
-      return morseToText(str);
+      return morseToText(str, lookUp);
     }
   } else {
     if (/\s/.test(str)) {
       return str
         .split(" ")
-        .map((word) => textToMorse(word))
+        .map((word) => textToMorse(word, lookUp))
         .join("   ");
     } else {
-      return textToMorse(str);
+      return textToMorse(str, lookUp);
     }
   }
 }
 
-function morseToText(morse) {
+function morseToText(morse, lookUpObject) {
   return morse
     .split(" ")
-    .map((code) => Object.keys(lookUp).find((key) => lookUp[key] === code))
+    .map((code) => Object.keys(lookUpObject).find((key) => lookUpObject[key] === code))
     .join("");
 }
 
-function textToMorse(text) {
+function textToMorse(text, lookUpObject) {
   return text
     .toUpperCase()
     .split("")
-    .map((char) => lookUp[char])
+    .map((char) => lookUpObject[char])
     .join(" ");
 }
 
