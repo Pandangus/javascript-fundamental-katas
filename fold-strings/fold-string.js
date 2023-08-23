@@ -1,8 +1,8 @@
 // Please do not change the name of this function
 function foldString(str) {
   if (str.length == 1) return str;
-  splitStr = ("" + str).split(" ");
-  foldedStrs = [];
+  const splitStr = ("" + str).split(" ");
+  const foldedStrs = [];
   for (index in splitStr) {
     if (splitStr[index].length % 2 === 0)
       foldedStrs.push(
