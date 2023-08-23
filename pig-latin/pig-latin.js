@@ -1,19 +1,19 @@
 // Please do not change the name of this function
 function pigLatin(str) {
-  latinArr = [];
-  splitStr = str.split(" ");
+  const latinArr = [];
+  const splitStr = str.split(" ");
   for (index in splitStr) {
-    firstCharacter = splitStr[index][0];
+    const firstCharacter = splitStr[index][0];
     if (isVowel(firstCharacter)) {
       latinArr.push(`${splitStr[index]}way`);
     } else {
-      word = splitStr[index];
-      count = 0;
+      const word = splitStr[index];
+      let count = 0;
       for (index in word) {
-        char = word[index];
+        const char = word[index];
         if (isVowel(char)) {
-          splitWord = word.split('')
-          consonants = splitWord.splice(0, count)
+          const splitWord = word.split('')
+          const consonants = splitWord.splice(0, count)
           latinArr.push(`${splitWord.join('')}${consonants.join('')}ay`)
           break
         } else {
